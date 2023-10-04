@@ -14,12 +14,20 @@ namespace NET_Homework_4_4
     {
         public Security(string position, string information) : base() 
         {
+            if (position == "") throw new ArgumentNullException("Немає вакансії");
             Position = position;
             Info = information;
         }
         public override void Print()
         {
-            Console.WriteLine($"Інформація о должности {Position}: {Info}");
+            if (Info == "")
+            {
+                throw new ArgumentNullException($"Немає ітформації о {Position}");
+            }
+            else
+            {
+                Console.WriteLine($"Інформація о должности {Position}: {Info}");
+            }
         }
     }
 }

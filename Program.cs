@@ -28,27 +28,62 @@ while (a != 0)
             }
             case 1:
             {
-                worker = new President("President", "Інформація");
+                try
+                {
+                    worker = new President("President", "Інформація");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 break;
             }
             case 2:
             {
-                worker = new Security("Security", "Інформація");
+                try
+                {
+                    worker = new Security("Security", "Інформація");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 break;
             }
             case 3:
             {
-                worker = new Manager("Manager", "Інформація");
+                try
+                {
+                    worker = new Manager("Manager", "Інформація");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 break;
             }
             case 4:
             {
-                worker = new Engineer("Engineer", "Інформація");
+                try
+                {
+                    worker = new Engineer("Engineer", "Інформація");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 break;
             }
     }
-    if(worker != null)
+
+    try
     {
-        worker.Print();
+        worker?.Print();
     }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+        break;
+    
 }
